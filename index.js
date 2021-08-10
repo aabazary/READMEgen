@@ -1,33 +1,33 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input. Questions from Demo Video of HW
+// Questions from Demo Video of HW(from class video)
 const questions = [{
+    //username
         type: 'input',
         name: 'username',
         message: 'What is your GitHub username?',
     },
-
+    //email
     {
         type: 'email',
         name: 'email',
         message: 'What is your email address? ',
-
     },
-
+    //project name
     {
         type: 'input',
         name: 'name',
         message: 'What is your project\'s name?',
     },
-
+    //project description
     {
         type: 'input',
         name: 'description',
         message: 'Please write a short description of your project:',
     },
-
+    //licenses
     {
         type: 'list',
         name: 'licenses',
@@ -35,24 +35,26 @@ const questions = [{
         choices: ['MIT', 'GPL 3.0', 'Apache 2.0', 'BSD 3', 'none']
 
     },
-
+    //dependencies
     {
         type: 'input',
         name: 'dependencies',
         message: 'What command should be run to install dependencies?(npm i)',
 
     },
-
+    //tests
     {
         type: 'input',
         name: 'tests',
         message: 'What command should be run to run tests? (npm test)',
     },
+    //instructions
     {
         type: 'input',
         name: 'instructions',
         message: 'What does the user need to know about using the repo?',
     },
+    //contributions
     {
         type: 'input',
         name: 'contributions',
@@ -61,10 +63,10 @@ const questions = [{
 ];
 
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+// Structure of the layout for the README 
 const generateREADME = (answers) => 
 `# ${answers.name}
+![](https://img.shields.io/badge/${answers.licenses}%20License-blue?style=flat-square)
 ## Description
 ${answers.description}
 ## Table of Contents (Optional)
@@ -72,12 +74,12 @@ ${answers.description}
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-## License
-![](https://img.shields.io/badge/${answers.licenses}%20License-blue?style=flat-square)
 ## Installation
 ${answers.dependencies}
 ## Usage
 ${answers.instructions}
+## License
+This project is covered under ${answers.licenses}
 ## Features
 ## How to Contribute
 ${answers.contributions}
@@ -86,7 +88,7 @@ ${answers.tests}
 ## Questions
 Contact ${answers.name} at ${answers.email}. Github link: https://github.com/${answers.email}
 `;
-// TODO: Create a function to initialize app
+//Create a function to initialize app. Uses inquirer to ask the questions, and then writes it to a README file.
 function init() {
     inquirer
         .prompt(questions)
