@@ -65,7 +65,9 @@ const questions = [{
 // function writeToFile(fileName, data) {}
 const generateREADME = (answers) => 
 `# ${answers.name}
+Created By:
 ${answers.username}
+Contact:
 ${answers.email}
 ## Description
 ${answers.description}
@@ -76,17 +78,16 @@ ${answers.description}
 - [License](#license)
 ## Installation
 ${answers.dependencies}
-${answers.tests}
 ## Usage
 ${answers.instructions}
 ## Credits
-${answers.contributions}
 ## License
-${answers.licenses}
-## Badges
+![](https://img.shields.io/badge/${answers.licenses}%20License-blue?style=flat-square)
 ## Features
 ## How to Contribute
+${answers.contributions}
 ## Tests
+${answers.tests}
 `;
 // TODO: Create a function to initialize app
 function init() {

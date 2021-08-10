@@ -1,8 +1,10 @@
-# Stuff
+# README Generator
+Created By:
 aabazary
+Contact:
 aabazary@gmail.com
 ## Description
-This is a project test
+A simple README Generator that allows users to input data from the integrated terminal in order to create a template based README file.
 ## Table of Contents (Optional)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -10,14 +12,13 @@ This is a project test
 - [License](#license)
 ## Installation
 npm i
-npm test
 ## Usage
-nothing
+Open the integrated terminal on the index.js file, type in "node index.js" to allow the prompts to populate, answer the questions to have them be filled in the corresponding area of the README
 ## Credits
-everything
 ## License
-GPL 3.0
-## Badges
+![](https://img.shields.io/badge/MIT%20License-blue?style=flat-square)
 ## Features
 ## How to Contribute
+Feel free to fork!
 ## Tests
+npm test
