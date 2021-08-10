@@ -65,27 +65,28 @@ const questions = [{
 
 // Structure of the layout for the README 
 const generateREADME = (answers) => 
-`# ${answers.name}
+`# <ins>${answers.name}</ins>
 ![](https://img.shields.io/badge/${answers.licenses}%20License-blue?style=flat-square)
 ## Description
 ${answers.description}
-## Table of Contents (Optional)
+## <ins>Table of Contents</ins>
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
-## Installation
+- [Questions](#questions)
+
+## <ins>Installation</ins>
 ${answers.dependencies}
-## Usage
+## <ins>Usage</ins>
 ${answers.instructions}
-## License
+## <ins>License</ins>
 This project is covered under ${answers.licenses}
-## Features
-## How to Contribute
+## <ins>Features</ins>
+## <ins>How to Contribute
 ${answers.contributions}
-## Tests
+## <ins>Tests</ins>
 ${answers.tests}
-## Questions
+## <ins>Questions</ins>
 Contact ${answers.name} at ${answers.email}. Github link: https://github.com/${answers.email}
 `;
 //Create a function to initialize app. Uses inquirer to ask the questions, and then writes it to a README file.
