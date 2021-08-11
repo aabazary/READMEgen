@@ -27,7 +27,7 @@ Example of the operation of the generator.
 
 ## <ins>License</ins>
 This project is covered under MIT
-## Features</ins>
+## <ins>Features</ins>
 ## <ins>How to Contribute</ins>
 Fork at will!
 ## <ins>Tests</ins>
