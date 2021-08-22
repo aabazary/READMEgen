@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // Questions from Demo Video of HW(from class video)
+
 const questions = [{
     //username
         type: 'input',
@@ -20,6 +21,13 @@ const questions = [{
         type: 'input',
         name: 'name',
         message: 'What is your project\'s name?',
+    },
+    //badges
+    {
+        type: 'checkbox',
+        name: 'badges',
+        message: 'What badges do you want?',
+        choices: ['HTML5-Badge', 'TailwindCSS', '![](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)', '![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)' ]
     },
     //project description
     {
@@ -66,6 +74,7 @@ const questions = [{
 // Structure of the layout for the README 
 const generateREADME = (answers) => 
 `# <ins>${answers.name}</ins>
+${answers.badges}
 ![](https://img.shields.io/badge/${answers.licenses}%20License-blue?style=flat-square)
 ## Description
 ${answers.description}
@@ -87,15 +96,31 @@ ${answers.contributions}
 ## <ins>Tests</ins>
 ${answers.tests}
 ## <ins>Questions</ins>
-Contact ${answers.name} at ${answers.email}. Github link: https://github.com/${answers.email}
+Contact ${answers.name} at ${answers.email}. Github link: https://github.com/${answers.username}
 `;
+
+
+function convertBadges(answers){
+    console.log('before2', answers)
+    let badges = JSON.stringify(answers);
+    console.log(badges)
+    console.log(typeof badges)
+    badges.replace('HTML5-Badge', '![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)')
+    badges.replace('TailwindCSS', '![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)')
+    console.log('after2', badges)
+}
+
 //Create a function to initialize app. Uses inquirer to ask the questions, and then writes it to a README file.
 function init() {
     inquirer
         .prompt(questions)
+   
         .then((answers) => {
+            console.log('before', answers.badges)
+            convertBadges(answers.badges)
+            console.log('after', answers.badges)
             const contentREADME = generateREADME(answers);
-
+            
             fs.writeFile('README.md', contentREADME, (err) =>
                 err ? console.log(err) : console.log('Successfully created README.md!')
             );
