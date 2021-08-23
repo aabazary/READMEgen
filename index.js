@@ -91,7 +91,7 @@ ${answers.dependencies}
 ## <ins>Usage</ins>
 ${answers.instructions}
 ## <ins>License</ins>
-![](https://img.shields.io/badge/License-${answers.license}%20-blue?style=flat-square)
+![](https://img.shields.io/badge/License-${answers.licenses}%20-blue?style=flat-square)
 This project is covered under ${answers.licenses}
 ## <ins>Features</ins>
 ## <ins>Contributions
