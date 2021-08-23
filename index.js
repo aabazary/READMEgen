@@ -75,13 +75,15 @@ const questions = [{
 const generateREADME = (answers) => 
 `# <ins>${answers.name}</ins>
 ${convertBadges(answers.badges)}
-![](https://img.shields.io/badge/${answers.licenses}%20License-blue?style=flat-square)
-## Description
+## <ins>Description</ins>
 ${answers.description}
 ## <ins>Table of Contents</ins>
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
+- [Features](#features)
+- [Contributions](#contributions)
+- [Tests](#tests)
 - [Questions](#questions)
 
 ## <ins>Installation</ins>
@@ -89,9 +91,10 @@ ${answers.dependencies}
 ## <ins>Usage</ins>
 ${answers.instructions}
 ## <ins>License</ins>
+![](https://img.shields.io/badge/License-${answers.license}%20-blue?style=flat-square)
 This project is covered under ${answers.licenses}
 ## <ins>Features</ins>
-## <ins>How to Contribute
+## <ins>Contributions
 ${answers.contributions}
 ## <ins>Tests</ins>
 ${answers.tests}
@@ -110,6 +113,11 @@ function convertBadges(answers){
     badges = badges.replace('"Express.JS"', '![](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)');
     badges = badges.replace('"MySQL"', '![](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)');
     badges = badges.replace(/,/g,'');
+    badges = badges.replace('[','');
+    let segdab = badges.split('').reverse().join('');
+    segdab = segdab.replace(']',''); 
+    badges = segdab.split('').reverse().join('');
+    
     return badges;
 }
 
