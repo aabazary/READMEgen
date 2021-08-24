@@ -27,7 +27,7 @@ const questions = [{
         type: 'checkbox',
         name: 'badges',
         message: 'What badges do you want?',
-        choices: ['HTML5', 'TailwindCSS', 'Bootstrap', 'Javascript', 'Node.JS', 'Express.JS', 'MySQL' ]
+        choices: ['HTML5', 'TailwindCSS', 'Bootstrap', 'Javascript', 'Node.JS', 'Express.JS', 'MySQL', 'Heroku' ]
     },
     //project description
     {
@@ -112,6 +112,7 @@ function convertBadges(answers){
     badges = badges.replace('"Bootstrap"', '![](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)');
     badges = badges.replace('"Express.JS"', '![](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)');
     badges = badges.replace('"MySQL"', '![](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)');
+    badges = badges.replace('"Heroku"', '![](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)');
     badges = badges.replace(/,/g,'');
     badges = badges.replace('[','');
     let segdab = badges.split('').reverse().join('');
@@ -130,7 +131,7 @@ function init() {
         .then((answers) => {
             const contentREADME = generateREADME(answers);
             
-            fs.writeFile('README.md', contentREADME, (err) =>
+            fs.writeFile('newREADME.md', contentREADME, (err) =>
                 err ? console.log(err) : console.log('Successfully created README.md!')
             );
         })
