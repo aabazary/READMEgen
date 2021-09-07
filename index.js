@@ -27,7 +27,7 @@ const questions = [{
         type: 'checkbox',
         name: 'badges',
         message: 'What badges do you want?',
-        choices: ['HTML5', 'TailwindCSS', 'Bootstrap', 'Javascript', 'Node.JS', 'Express.JS', 'MySQL', 'Heroku' ]
+        choices: ['HTML5', 'CSS3', 'TailwindCSS', 'Bootstrap', 'Javascript', 'Node.JS', 'Express.JS', 'MySQL', 'Heroku', 'Insomnia' ]
     },
     //project description
     {
@@ -107,12 +107,14 @@ function convertBadges(answers){
     let badges = JSON.stringify(answers);
     badges = badges.replace('"HTML5"', '![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)');
     badges = badges.replace('"TailwindCSS"', '![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)');
+    badges = badges.replace('"CSS3"', '![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)');
     badges = badges.replace('"Node.JS"', '![](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)');
     badges = badges.replace('"Javascript"', '![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)');
     badges = badges.replace('"Bootstrap"', '![](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)');
     badges = badges.replace('"Express.JS"', '![](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)');
     badges = badges.replace('"MySQL"', '![](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)');
     badges = badges.replace('"Heroku"', '![](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)');
+    badges = badges.replace('"Insomnia"', '![](https://img.shields.io/badge/-Insomnia-5849BE?style=for-the-badge&logo=insomnia&logoColor=white)');
     badges = badges.replace(/,/g,'');
     badges = badges.replace('[','');
     let segdab = badges.split('').reverse().join('');
